@@ -25,6 +25,15 @@ function Playground() {
   // Third: return....something
   // Never, ever, under any circumstances, do this:
   // count++
+  if (spinnerOn) {
+    return (
+      <div className="container">
+        <h3>The spinner is {spinnerOn ? 'ON' : 'OFF'}.</h3>
+        <button onClick={() => setSpinnerOn(false)}>Turn off Spinnah</button>
+      </div>
+    )
+  }
+
   return (
     <div>
       <h1>Welcome to the playground!</h1>
