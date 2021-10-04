@@ -19,6 +19,7 @@ import React, { useState } from 'react';
 function Playground() {
   const [count, setCount] = useState(0);
   const [spinnerOn, setSpinnerOn] = useState(false);
+  const [choice, setChoice] = useState('scissors');
   // returns 2 things: 
   //     first: state variable, 
   //     second: a way to update the state variable
@@ -35,15 +36,28 @@ function Playground() {
   }
 
   return (
-    <div>
+    <div className="container">
       <h1>Welcome to the playground!</h1>
       <p>The current count is: {count}</p>
       <button onClick={() => setCount(count + 1)}>Increase</button>
       <button onClick={() => setCount(count - 1)}>Decrease</button>
       <button onClick={() => setSpinnerOn(true)}>Turn on Spinnah</button>
+      <h3>The current weapon is {choice}</h3>
+      <button onClick={() => setChoice('scissors')}>pick scissors</button>
+      <button onClick={() => setChoice('rock')}>pick rock</button>
+      <button onClick={() => setChoice('paper')}>pick paper</button>
     </div>
   )
 }
+
+// TERNARY FUN
+// if (a) {
+//   name = "Casey";
+// } else {
+//   name = "Robert";
+// }
+
+// name = a ? "Casey" : "Robert";
 
 // Fourth: export (expose) our component to the outside world
 export default Playground;
