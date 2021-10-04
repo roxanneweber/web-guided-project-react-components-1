@@ -1,5 +1,8 @@
-import React from 'react'
-import { render } from 'react-dom'
+import React from 'react';
+// Default import
+
+import { render } from 'react-dom';
+// Named import
 
 /*
 💥💥💥 Rules when DECLARING a React component 💥💥💥
@@ -22,14 +25,28 @@ import { render } from 'react-dom'
 */
 
 function App(props) {
+      {/* document.createElement('div');
+        elem.classList.add('container');
+    */}
   return (
     <div className='container'>
       <h1>Welcome to React, Web {props.cohort}</h1>
+      <p>Hello, {props.name}, you are {props.age}!</p>
     </div>
   )
 }
 
+// Hello, name, you are age!
 render(
-  <App cohort='37' />,
+  <App cohort='37' name='Casey' age='74'/>,
   document.querySelector('#root')
 )
+
+/**
+ * props!!! -> data passed from one component to a child component
+ * const props = {
+ *    cohort: '37',
+ *    name: 'Casey',
+ *    age: '74'
+ * }
+ */

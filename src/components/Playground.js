@@ -8,3 +8,20 @@
   - We never tamper with state: `healthPoints++`, `healthPoints--` or `someState.push(item)` is FORBIDDEN
   - We use the dedicated "state updater" to schedule a state change: `setHealthPoints(healthPoints + 1)`
 */
+
+// First: Import React
+import React from 'react';
+
+// Second: Define the component (ie function)
+// function declaration ::: function name() {}
+// function expression  ::: const name = () => {}
+
+function Playground() {
+  // Third: return....something
+  return (
+    <h1>Welcome to the playground!</h1>
+  )
+}
+
+// Fourth: export (expose) our component to the outside world
+export default Playground;
