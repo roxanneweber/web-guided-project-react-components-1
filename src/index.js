@@ -3,6 +3,7 @@ import React from 'react';
 
 import { render } from 'react-dom';
 // Named import
+import Playground from './components/Playground';
 
 /*
 💥💥💥 Rules when DECLARING a React component 💥💥💥
@@ -25,13 +26,14 @@ import { render } from 'react-dom';
 */
 
 function App(props) {
-      {/* document.createElement('div');
-        elem.classList.add('container');
-    */}
+    /* document.createElement('div');
+       elem.classList.add('container');
+    */
   return (
     <div className='container'>
       <h1>Welcome to React, Web {props.cohort}</h1>
       <p>Hello, {props.name}, you are {props.age}!</p>
+      <Playground />
     </div>
   )
 }
