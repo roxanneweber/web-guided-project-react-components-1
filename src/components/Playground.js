@@ -16,10 +16,12 @@ import React, { useState } from 'react';
 // function declaration ::: function name() {}
 // function expression  ::: const name = () => {}
 
-function Playground() {
+function Playground(props) {
   const [count, setCount] = useState(0);
   const [spinnerOn, setSpinnerOn] = useState(false);
   const [choice, setChoice] = useState('scissors');
+
+  console.log(props);
   // returns 2 things: 
   //     first: state variable, 
   //     second: a way to update the state variable
@@ -38,6 +40,14 @@ function Playground() {
   return (
     <div className="container">
       <h1>Welcome to the playground!</h1>
+      { props.loggedIn ? <button>Log out</button> : <button>Log in</button> }
+      {
+        // Ternary! 
+      }
+      { props.loggedIn && <button>Log out</button> }
+      {
+        // Short circuit evaluation
+      }
       <p>The current count is: {count}</p>
       <button onClick={() => setCount(count + 1)}>Increase</button>
       <button onClick={() => setCount(count - 1)}>Decrease</button>

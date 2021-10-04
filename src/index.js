@@ -29,16 +29,16 @@ function App(props) {
     /* document.createElement('div');
        elem.classList.add('container');
     */
+
   return (
     <div className='container'>
       <h1>Welcome to React, Web {props.cohort}</h1>
       <p>Hello, {props.name}, you are {props.age}!</p>
-      <Playground />
+      <Playground loggedIn={true} logout={logout}/>
     </div>
   )
 }
 
-// Hello, name, you are age!
 render(
   <App cohort='37' name='Casey' age='74'/>,
   document.querySelector('#root')
