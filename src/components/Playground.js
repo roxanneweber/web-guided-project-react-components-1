@@ -18,13 +18,21 @@ import React, { useState } from 'react';
 
 function Playground() {
   const [count, setCount] = useState(0);
-  console.log(count);
+  const [spinnerOn, setSpinnerOn] = useState(false);
   // returns 2 things: 
   //     first: state variable, 
   //     second: a way to update the state variable
   // Third: return....something
+  // Never, ever, under any circumstances, do this:
+  // count++
   return (
-    <h1>Welcome to the playground!</h1>
+    <div>
+      <h1>Welcome to the playground!</h1>
+      <p>The current count is: {count}</p>
+      <button onClick={() => setCount(count + 1)}>Increase</button>
+      <button onClick={() => setCount(count - 1)}>Decrease</button>
+      <button onClick={() => setSpinnerOn(true)}>Turn on Spinnah</button>
+    </div>
   )
 }
 
