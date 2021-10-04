@@ -10,13 +10,18 @@
 */
 
 // First: Import React
-import React from 'react';
+import React, { useState } from 'react';
 
 // Second: Define the component (ie function)
 // function declaration ::: function name() {}
 // function expression  ::: const name = () => {}
 
 function Playground() {
+  const [count, setCount] = useState(0);
+  console.log(count);
+  // returns 2 things: 
+  //     first: state variable, 
+  //     second: a way to update the state variable
   // Third: return....something
   return (
     <h1>Welcome to the playground!</h1>
