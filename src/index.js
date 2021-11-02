@@ -1,5 +1,7 @@
-import React from 'react'
-import { render } from 'react-dom'
+import React from 'react';
+import { render } from 'react-dom';
+
+import Playground from './components/Playground';
 
 /*
 💥💥💥 Rules when DECLARING a React component 💥💥💥
@@ -22,14 +24,36 @@ import { render } from 'react-dom'
 */
 
 function App(props) {
-  return (
-    <div className='container'>
-      <h1>Welcome to React, Web {props.cohort}</h1>
-    </div>
-  )
+	console.log(props);
+	// we will never see 'props' as something else - this is only used once for each app, and we don't know how many variables are passing through so we just create one object, called props, which now allows us to pull in an arbitrary number of key/value pairs
+
+	return (
+		// this is JSX - a templating language provided by React
+		// React is doing all the messiness for us and returning all our elements, either HTML elements or javascript elements or both
+
+		<div className='container'>
+			<h1>Welcome to React, Web {props.cohort}</h1>
+			<h2>Your Instructor is: {props.instructor}</h2>
+			<p>This is week {props.week}</p>
+			<Playground />
+			{props.happy ? (
+				<p>We are Very Happy!!!</p>
+			) : (
+				<p>Nope, not very happy(</p>
+			)}
+		</div>
+	);
 }
+// the props.happy is a ternary statement in javascript
+// every React app has a render
+// tabsAppender(selector) --> this appended our elements
+// this is what React is doing for us
 
 render(
-  <App cohort='37' />,
-  document.querySelector('#root')
-)
+	// these values below (cohort=49 and instructor = casey, are looped over by react and assigned to an object named 'props' as indicated in the argument of function App)
+
+	<App cohort='49' instructor='Casey' week='2' happy={true} />, // here we are passing 'cohort' value into the App
+	document.querySelector('#root')
+);
+// components are just functions like they were before
+// components can take in attributes
