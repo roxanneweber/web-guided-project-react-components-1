@@ -1,11 +1,40 @@
-import React from 'react';
+import React, { useState } from 'react';
 
-function Playground() {
+function Playground(props) {
+	const [count, setCount] = useState(0); // this sets the default or starting value
+	const [spinnerOn, setSpinnerOn] = useState(false);
+	// using the square brackets we tell React to use a 'setCount' process which will allow us to update this variable
+	console.log(setCount); // we can run this function 'setCount' and it will update our default 'useState' value
+
+	if (spinnerOn) {
+		return (
+			<div className='container'>
+				<h1>THE SPINNER IS ON</h1>
+				<button onClick={() => setSpinnerOn(!spinnerOn)}>
+					Toggle spinner
+				</button>
+			</div>
+		);
+	}
+	// once you RETURN from a function, it's done! So, nothing else {below} will run
+
+	//! useState is a function given to use by React to retain value
+	console.log(props);
 	return (
 		<div>
 			<h1>PLAYGROUND!!!</h1>
+			<button onClick={() => setSpinnerOn(!spinnerOn)}>
+				Set the spinner on now
+			</button>
+			<p>
+				Another place for the cohort {props.cohort} props variable to live
+			</p>
+			<h3>Count is: {count}</h3>
+			<button onClick={() => setCount(count + 1)}>Increase count + 1</button>
+			<button onClick={() => setCount(count - 1)}>Decrease count -1</button>
 		</div>
 	);
+	//* each time we change the count with setCount, it will change the useCount value; here a refresh will 'reset' the useState value
 }
 
 export default Playground; // this will not 'expose' this function to other elements of the App

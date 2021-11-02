@@ -35,7 +35,7 @@ function App(props) {
 			<h1>Welcome to React, Web {props.cohort}</h1>
 			<h2>Your Instructor is: {props.instructor}</h2>
 			<p>This is week {props.week}</p>
-			<Playground />
+			<Playground cohort={props.cohort} />
 			{props.happy ? (
 				<p>We are Very Happy!!!</p>
 			) : (
